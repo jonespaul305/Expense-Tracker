@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="welcome-body">
+
+    <div class="welcome-container">
+        <h1>Smart Expense Tracker</h1>
+        <p>Track. Analyze. Improve your financial life.</p>
+
+        <div class="welcome-buttons">
+            <button class="primary-btn" onclick="goToRegister()">Get Started</button>
+            <button class="secondary-btn" onclick="goToLogin()">Already have account?</button>
+        </div>
+    </div>
+
+<script>
+function goToRegister() {
+    window.location = "register.html";
+}
+
+function goToLogin() {
+    window.location = "login.html";
+}
+</script>
+
+</body>
+</html>

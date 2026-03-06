@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+</head>
+
+<body>
+
+<div class="container">   <!-- 🔥 PUT CONTAINER HERE -->
+
+    <button class="logout-btn" onclick="logout()">Logout</button>
+
+    <h2>Expense Dashboard</h2>
+
+    <!-- Input Section -->
+    <div class="input-group">
+        <input type="number" id="amount" placeholder="Amount">
+        <input type="text" id="category" placeholder="Category">
+        <input type="date" id="date">
+        <button onclick="addExpense()">Add</button>
+    </div>
+
+    <!-- Filter Section -->
+    <div class="filter-section">
+        <input type="month" id="monthFilter" onchange="loadExpenses()">
+        <button onclick="showAll()">Show All</button>
+    </div>
+
+    <!-- Summary Card -->
+     <div id="loader" class="loader"></div>
+    <div class="stats-container">
+    <div class="stat-card">
+        <h4>Total Expense</h4>
+        <h2 id="total">₹0</h2>
+    </div>
+
+    <div class="stat-card">
+        <h4>Monthly Expense</h4>
+        <h2 id="monthlyTotal">₹0</h2>
+    </div>
+
+    <div class="stat-card">
+        <h4>Total Entries</h4>
+        <h2 id="entryCount">0</h2>
+    </div>
+</div>
+
+<div class="card" id="comparisonCard">
+    <h3>Monthly Comparison</h3>
+    <p>This Month: <span id="currentMonthTotal">₹ 0</span></p>
+    <p>Last Month: <span id="lastMonthTotal">₹ 0</span></p>
+    <p>Change: <span id="percentageChange">0%</span></p>
+</div>
+
+    <!-- Expense List -->
+    <ul id="expenseList"></ul>
+
+    <!-- Chart -->
+    <div class="chart-container">
+        <canvas id="expenseChart"></canvas>
+        <canvas id="comparisonChart"></canvas>
+    </div>
+
+</div>   <!-- 🔥 CLOSE CONTAINER HERE -->
+
+
+<!-- EDIT MODAL -->
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <h3>Edit Expense</h3>
+         <input type="number" id="editAmount" placeholder="Amount">
+    <input type="text" id="editCategory" placeholder="Category">
+    <input type="date" id="editDate">
+         <div class="modal-buttons">
+      <button onclick="updateExpense()">Update</button>
+      <button onclick="closeModal()">Cancel</button>
+    </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+if (!localStorage.getItem("user_id")) {
+    window.location = "login.html";
+}
+</script>
+</body>
+</html>

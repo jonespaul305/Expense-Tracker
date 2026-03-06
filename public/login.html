@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body">
+
+<div class="auth-card">
+    <h2>Welcome Back</h2>
+
+    <input type="text" id="login_id" placeholder="Login ID">
+    <input type="password" id="password" placeholder="Password">
+
+    <button class="primary-btn" onclick="login()">Login</button>
+
+    <p>No account? 
+        <span onclick="goRegister()" class="link">Register</span>
+    </p>
+
+    <p id="msg" class="error-text"></p>
+</div>
+
+<script src="script.js"></script>
+<script>
+function goRegister(){
+    window.location="register.html";
+}
+</script>
+</body>
+</html>
